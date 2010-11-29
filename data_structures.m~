@@ -1,0 +1,31 @@
+function data_structures(full_obs)
+%dummy variable
+global Var theta e numActions numBinFeatures numPlayers lambda gamma epsilon alpha Q a;   %define all your variables to be used in TeamAgent as globals
+
+if(full_obs)    %full-observability scenario
+    Var=zeros(1,10);
+
+    'firs'
+    numPlayers = 5;
+    numBinFeatures = 37;
+    numActions = 4;
+
+%     theta = ones(1,numBinFeatures*numActions);
+    a = ones(numPlayers);
+    theta = [ones(1,numBinFeatures) zeros(1,numBinFeatures*(numActions-1))];
+    
+    
+    e = zeros(numPlayers,numBinFeatures*numActions);
+    Q = zeros(numPlayers,numActions);
+    
+    alpha = 0.75;
+    lambda = 0.65;
+    gamma = 0.3;
+    epsilon = 0.1;
+else        %partial-observability scenario
+    %
+    %
+end
+
+
+end
